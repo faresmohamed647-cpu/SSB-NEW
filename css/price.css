@@ -1,0 +1,25 @@
+.order-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 160px;
+    height: 45px;
+
+    border-radius: 25px;
+    background: transparent;
+    border: 2px solid #FF3E41;
+    color: #FF3E41;
+
+    font-weight: 600;
+    text-decoration: none;
+
+    transition: all 0.4s ease;
+}
+
+.order-btn:hover {
+    background: #FF3E41;
+    color: #fff;
+    box-shadow: 0 4px 15px rgba(255, 62, 65, 0.5);
+    transform: translateY(-2px);
+}

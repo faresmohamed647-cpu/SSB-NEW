@@ -1,0 +1,219 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+}
+
+body {
+    background: linear-gradient(to right, #e2e2e2, #FF3E41);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+
+/* ================= CONTAINER ================= */
+
+.container {
+    background-color: #fff;
+    border-radius: 30px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.35);
+    position: relative;
+    overflow: hidden;
+    width: 1000px;
+    max-width: 100%;
+    min-height: 600px;
+}
+
+
+/* ================= FORMS ================= */
+
+.container form {
+    background-color: #fff;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding: 20px 40px;
+    height: 100%;
+    overflow-y: auto;
+}
+
+.container h1 {
+    font-weight: 600;
+    margin: 10px 0;
+}
+
+.container label {
+    width: 100%;
+    font-size: 13px;
+    margin-top: 6px;
+}
+
+.container input,
+.container textarea,
+.container select {
+    background-color: #f0f0f0;
+    border: none;
+    margin: 5px 0;
+    padding: 10px 15px;
+    font-size: 13px;
+    border-radius: 8px;
+    width: 100%;
+    outline: none;
+}
+
+textarea {
+    width: 100%;
+    min-height: 150px;
+    /* كبر الطول */
+    resize: vertical;
+    /* المستخدم يقدر يكبر ويصغر */
+    padding: 12px 15px;
+    border-radius: 10px;
+    font-size: 14px;
+}
+
+
+/* ================= BUTTONS ================= */
+
+.container button {
+    background-color: #FF3E41;
+    color: #fff;
+    font-size: 12px;
+    padding: 10px 35px;
+    border: none;
+    border-radius: 8px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    margin-top: 10px;
+    cursor: pointer;
+}
+
+button.hidden {
+    background-color: transparent;
+    border: 1px solid #fff;
+}
+
+
+/* ================= FORM CONTAINERS ================= */
+
+.form-container {
+    position: absolute;
+    top: 0;
+    height: 100%;
+    width: 50%;
+    transition: all 0.6s ease-in-out;
+}
+
+
+/* student form */
+
+.join-student-container {
+    left: 0;
+    z-index: 2;
+}
+
+
+/* car owner form */
+
+.join-us {
+    left: 0;
+    opacity: 0;
+    z-index: 1;
+}
+
+
+/* when active */
+
+.container.active .join-student-container {
+    transform: translateX(100%);
+}
+
+.container.active .join-us {
+    transform: translateX(100%);
+    opacity: 1;
+    z-index: 5;
+    animation: move 0.6s;
+}
+
+@keyframes move {
+    0%,
+    49.99% {
+        opacity: 0;
+        z-index: 1;
+    }
+    50%,
+    100% {
+        opacity: 1;
+        z-index: 5;
+    }
+}
+
+
+/* ================= TOGGLE ================= */
+
+.toggle-container {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 50%;
+    height: 100%;
+    overflow: hidden;
+    transition: all 0.6s ease-in-out;
+    border-radius: 150px 0 0 100px;
+    z-index: 1000;
+}
+
+.container.active .toggle-container {
+    transform: translateX(-100%);
+    border-radius: 0 150px 100px 0;
+}
+
+.toggle {
+    background: linear-gradient(to right, #FF3E41, #FF3E41);
+    color: #fff;
+    position: relative;
+    left: -100%;
+    width: 200%;
+    height: 100%;
+    transform: translateX(0);
+    transition: all 0.6s ease-in-out;
+}
+
+.container.active .toggle {
+    transform: translateX(50%);
+}
+
+.toggle-panel {
+    position: absolute;
+    width: 50%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 0 30px;
+    text-align: center;
+    top: 0;
+    transition: all 0.6s ease-in-out;
+}
+
+.toggle-left {
+    transform: translateX(-200%);
+}
+
+.container.active .toggle-left {
+    transform: translateX(0);
+}
+
+.toggle-right {
+    right: 0;
+    transform: translateX(0);
+}
+
+.container.active .toggle-right {
+    transform: translateX(200%);
+}
