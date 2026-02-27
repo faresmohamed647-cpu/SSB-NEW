@@ -1,0 +1,128 @@
+* { 
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: poppins, sans-serif;
+}
+
+body {
+    height: 100vh;
+    width: 100%;
+    background: #0c4ba9;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    width: 400px;
+    padding: 25px 35px;
+    background: #fff;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+label {
+    font-weight: 600;
+    font-size: 15px;
+    margin-bottom: 8px;
+    align-self: flex-start;
+}
+
+input {
+    width: 100%;
+    height: 50px;
+    border: 1px solid #5e0b0b;
+    outline: 0;
+    padding: 10px;
+    margin-bottom: 15px;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+/* QR Container يبدأ صغير */
+#qrContainer {
+    width: 250px;
+    height: 0;
+    border-radius: 5px;
+    padding: 0;
+    margin: 10px auto;
+    overflow: hidden;
+    transition: height 0.5s ease;
+}
+
+#qrContainer.img-show {
+    height: 250px; /* ارتفاع بعد ظهور الكود */
+    border: 1px solid #999ea9;
+}
+
+#qrContainer img {
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 0 5px #090a0c;
+}
+
+/* Buttons */
+button {
+    width: 100%;
+    height: 50px;
+    border: none;
+    margin: 10px 0;
+    outline: 0;
+    background: #0c4ba9;
+    color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
+    font-weight: 500;
+    font-size: 15px;
+    letter-spacing: 1px;
+    cursor: pointer;
+}
+
+a {
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 50px;
+    width: 100%;
+    background: #0c4ba9;
+    color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
+    font-weight: 5
+}
+.student-card {
+    width: 320px;
+    height: 200px;
+    background: linear-gradient(135deg, #000000, #182848);
+    border-radius: 15px;
+    color: #fff;
+    margin: 20px auto 0;
+    padding: 20px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+    opacity: 0;
+    transform: translateY(50px);
+    transition: all 0.6s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.student-card.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.student-card .card-content h2 {
+    margin-bottom: 10px;
+    font-size: 20px;
+}
+
+.student-card .card-content p {
+    margin: 3px 0;
+    font-size: 16px;
+}

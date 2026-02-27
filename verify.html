@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Account Verification</title>
+    <link rel="stylesheet" href="css/pearents.css">
+</head>
+
+<body>
+
+<div class="container" id="container">
+
+    <!-- ===== Parent Verify Form ===== -->
+    <div class="form-container join-student-container">
+        <form>
+            <h1>Parent Verification</h1>
+
+            <input type="email" placeholder="Email" required>
+            <input type="text" placeholder="Parent Name" required>
+            <input type="text" placeholder="Student Name" required>
+
+            <button type="submit">Verify</button>
+        </form>
+    </div>
+
+    <!-- ===== Car Owner Verify Form ===== -->
+    <div class="form-container join-us">
+        <form>
+            <h1>Car Owner Verification</h1>
+
+            <input type="email" placeholder="Email" required>
+            <input type="text" placeholder="Full Name" required>
+            <input type="text" placeholder="ID Number or License Plate" required>
+
+            <button type="submit">Verify</button>
+        </form>
+    </div>
+
+    <!-- ===== Toggle Panels ===== -->
+    <div class="toggle-container">
+        <div class="toggle">
+
+            <div class="toggle-panel toggle-left">
+                <h1>Parent Verification</h1>
+                <p>Fill the form to confirm your account.</p>
+                <button type="button" id="login">Parent</button>
+            </div>
+
+            <div class="toggle-panel toggle-right">
+                <h1>Car Owner Verification</h1>
+                <p>Fill the form to confirm your driver account.</p>
+                <button type="button" id="register">Car Owner</button>
+            </div>
+
+        </div>
+    </div>
+
+</div>
+
+<script>
+const container = document.getElementById("container");
+const registerBtn = document.getElementById("register");
+const loginBtn = document.getElementById("login");
+
+registerBtn.addEventListener("click", () => {
+    container.classList.add("active");
+});
+
+loginBtn.addEventListener("click", () => {
+    container.classList.remove("active");
+});
+
+window.addEventListener("load", () => {
+    // Check query parameter first
+    const urlParams = new URLSearchParams(window.location.search);
+    const type = urlParams.get("type");
+    
+    if (type === "car-owner") {
+        container.classList.add("active");
+    } else if (type === "student") {
+        container.classList.remove("active");
+    } else {
+        // Fall back to hash if no query parameter
+        const hash = window.location.hash;
+        if (hash === "#carowner") {
+            container.classList.add("active");
+        } else {
+            container.classList.remove("active");
+        }
+    }
+});
+</script>
+
+</body>
+</html>

@@ -1,9 +1,79 @@
 /********** Template CSS **********/
 :root {
+    --primary-color: #FF3E41;
+    --secondary-color: #5DADE2;
+    --success-color: #2ECC71;
+    --warning-color: #F39C12;
+    --danger-color: #E74C3C;
+    --info-color: #3498DB;
+    --dark-blue: #2C3E50;
+    --light-gray: #ECF0F1;
+    --text-dark: #2C3E50;
+    --text-light: #7F8C8D;
+    --white: #FFFFFF;
     --primary: #FF3E41;
     --secondary: #51CFED;
     --light: #F8F2F0;
     --dark: #060315;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes pulse {
+    0%, 100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.5;
+    }
+}
+
+@keyframes slideInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideInRight {
+    from {
+        opacity: 0;
+        transform: translateX(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes scaleIn {
+    from {
+        opacity: 0;
+        transform: scale(0.95);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes hover-lift {
+    to {
+        transform: translateY(-5px);
+    }
 }
 
 .fw-medium {

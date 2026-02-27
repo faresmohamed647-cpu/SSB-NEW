@@ -1,4 +1,72 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap');
+
+:root {
+    --primary-color: #FF3E41;
+    --secondary-color: #5DADE2;
+    --success-color: #2ECC71;
+    --warning-color: #F39C12;
+    --danger-color: #E74C3C;
+    --info-color: #3498DB;
+    --dark-blue: #2C3E50;
+    --light-gray: #ECF0F1;
+    --text-dark: #2C3E50;
+    --text-light: #7F8C8D;
+    --white: #FFFFFF;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes pulse {
+    0%, 100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.5;
+    }
+}
+
+@keyframes slideInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideInRight {
+    from {
+        opacity: 0;
+        transform: translateX(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes scaleIn {
+    from {
+        opacity: 0;
+        transform: scale(0.95);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -186,6 +254,72 @@ button.hidden {
 
 .container.active .toggle {
     transform: translateX(50%);
+}
+
+/* new styles for verification links */
+.existing-account {
+    margin: 8px 0 16px;
+    font-size: 12px;
+    text-align: center;
+}
+.existing-account a,
+.existing-account button {
+    display: inline-block;
+    padding: 6px 16px;
+    background: var(--primary-color, #FF3E41);
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    font-size: 12px;
+    font-weight: 600;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.2s ease;
+}
+.existing-account a:hover,
+.existing-account button:hover {
+    background: rgba(255, 62, 65, 0.85);
+    transform: translateY(-2px);
+}
+
+/* toggle-panel button styling */
+.toggle-panel button {
+    padding: 14px 40px;
+    background: var(--primary-color, #FF3E41);
+    color: #fff;
+    border: none;
+    border-radius: 10px;
+    font-size: 15px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    cursor: pointer;
+    margin-top: 20px;
+    box-shadow: 0 4px 15px rgba(255, 62, 65, 0.3);
+    transition: all 0.3s ease;
+}
+.toggle-panel button:hover {
+    background: rgba(255, 62, 65, 0.9);
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(255, 62, 65, 0.5);
+}
+.toggle-panel button:active {
+    transform: translateY(-1px);
+    box-shadow: 0 2px 10px rgba(255, 62, 65, 0.4);
+}
+.toggle-panel button.hidden {
+    background-color: transparent;
+    border: 2px solid #fff;
+    box-shadow: none;
+}
+.toggle-panel button.hidden:hover {
+    background: rgba(255, 255, 255, 0.1);
+    box-shadow: 0 4px 15px rgba(255, 255, 255, 0.2);
+}
+
+.verify-container {
+    width: 100%;
+    padding: 20px 40px;
 }
 
 .toggle-panel {
